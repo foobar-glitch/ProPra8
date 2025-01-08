@@ -9,15 +9,10 @@ public class Grid {
         cubes = new ArrayList<>();
     }
 
-    public void addCube(Cube c){
-        if(this.fits(c)){
-            cubes.add(c);
-        }
-    }
 
 
-    public boolean fits(Cube c){
-        double xAxis = 0, yAxis = 0;
+    public Cube add(Cube c){
+        double horizontalAxis = 0;
         /*
         c2 --- c3
         |       |
@@ -36,12 +31,13 @@ public class Grid {
             //double dx0x1 = sqrt((c1.getX() - c0.getX())^2 + (c1.getY() - c0.getY()^2));
 
             //Euklid. Abstand zwischen zwischen zwei Punkten im Koordinaten system
-            double d01 = c0.getEuclidianDistance(c1), d03 = c0.getEuclidianDistance(c3);
-            xAxis += d01;
-            yAxis += d03;
-
+            horizontalAxis += elem.getLowerLine();
 
         }
+        // Start point of solution is the start point of the original cube
+        Cube s0 = new Cube(cubes.get(0).getCoordinates());
+        Cube s1 = new Cube(s0.getCoordinates());
+
         //Punkt liegt in gerade?
         //if(xAxis >= c.)
     }

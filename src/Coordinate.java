@@ -12,6 +12,9 @@ public class Coordinate {
     int getX(){return this.x;}
     int getY(){return this.y;}
 
+    public Coordinate addCoordinate(Coordinate o){
+        return new Coordinate(this.x + o.x, this.y + o.y);
+    }
 
     public double getEuclidianDistance(Coordinate o){
         return sqrt((o.getX() - this.getX())^2 + (o.getY() - this.getY()^2));
