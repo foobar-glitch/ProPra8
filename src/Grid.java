@@ -12,14 +12,12 @@ public class Grid {
 
 
     public Cube addCubeToGrid(Cube c){
-        double horizontalAxis = 0;
         /*
         c2 --- c3
         |       |
         |       |
         c0 --- c1
          */
-        Coordinate c0, c1, c2, c3;
         Cube s = new Cube(cubes.get(0).getCoordinates());
         for(Cube elem: cubes){
             s = s.addCubes(elem);
