@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 import static java.lang.Math.sqrt;
 
 public class Coordinate {
@@ -20,5 +18,9 @@ public class Coordinate {
 
     public double getEuclidianDistance(Coordinate o){
         return sqrt((o.getX() - this.getX())^2 + (o.getY() - this.getY()^2));
+    }
+
+    public String printCoordinate(){
+        return String.format("(%d, %d)", x, y);
     }
 }

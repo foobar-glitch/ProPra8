@@ -14,5 +14,13 @@ public class Test {
 
         Cube cubeGes = cube0.addCubes(cube1);
 
+
+        System.out.println("=======================");
+        System.out.println(cube0.printCoordinates());
+        System.out.println("=======================");
+        System.out.println(cube1.printCoordinates());
+        System.out.println("=======================");
+        System.out.println(cubeGes.printCoordinates());
+        System.out.println("=======================");
     }
 }

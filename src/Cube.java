@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Cube {
-    ArrayList<Coordinate> cubeCoordinates;
+    List<Coordinate> cubeCoordinates;
 
     /*
        c2 --c-- c3
@@ -12,7 +14,7 @@ public class Cube {
     */
 
     public Cube(Coordinate c0, Coordinate c1, Coordinate c2, Coordinate c3){
-        cubeCoordinates = new ArrayList<>();
+        cubeCoordinates = new ArrayList<>(Arrays.asList(null, null, null, null));
         cubeCoordinates.set(0, c0);
         cubeCoordinates.set(1, c1);
         cubeCoordinates.set(2, c2);
@@ -25,7 +27,7 @@ public class Cube {
     }
 
 
-    ArrayList<Coordinate> getCoordinates(){return this.cubeCoordinates;}
+    List<Coordinate> getCoordinates(){return this.cubeCoordinates;}
 
     public Cube addCubes(Cube o){
         return new Cube(
@@ -33,6 +35,17 @@ public class Cube {
                 this.cubeCoordinates.get(1).addCoordinate(o.cubeCoordinates.get(1)),
                 this.cubeCoordinates.get(2).addCoordinate(o.cubeCoordinates.get(2)),
                 this.cubeCoordinates.get(3).addCoordinate(o.cubeCoordinates.get(3))
+        );
+    }
+    
+    
+    public String printCoordinates(){
+        return String.format(
+                "%s\t%s \n%s\t%s",
+                cubeCoordinates.get(0).printCoordinate(),
+                cubeCoordinates.get(1).printCoordinate(),
+                cubeCoordinates.get(2).printCoordinate(),
+                cubeCoordinates.get(3).printCoordinate()
         );
     }
 
